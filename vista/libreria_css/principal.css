@@ -1,0 +1,29 @@
+body{
+	
+}
+
+section, nav{
+	display:flex;
+	flex-direction: column;
+}
+
+
+nav{
+	width: 20vw;
+	background-color: green;
+	padding: 1em;	
+}
+
+nav a:hover{
+	background-color:grey;
+}
+nav a{
+	display:block;
+	background-color:black;
+	text-decoration: none;
+	padding:2rem;
+	margin-bottom: 1rem;
+	font-weight:bold;
+	text-transform:uppercase;
+	color:white;	
+}

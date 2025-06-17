@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="autor" content="Santiago Servin">
+<meta name="description" content="Sistema Acompañante Terapeutico">
+
+<!-- <script type="text/javascript" src ="../../libreria_javascript/Validacion.js"></script> -->
+<script type="text/javascript" src ="javascript/index.js"></script>
+
+<link rel="stylesheet" href="../libreria_css/index.css">
+<link rel="stylesheet" href="../libreria_css/formulario_estilos.css">
+<link rel="stylesheet" href="css/index.css">
+
+<title></title>
+</head>
+
+<body>
+	<header>
+	<h1></h1>
+	</header>
+	<section>
+		<article class= "contenedor_formulario">
+			<form id="id_fomr_registro" class "formulario" name="formulario" method="post" action ="procesa.php">
+				<fieldset class = "fieldset" name="datos personales">
+					<legend class = "legend" >Datos personales</legend>
+					
+					<span class="form_grupo">
+						<label class ="label" for ="id_nombre">nombre:</label>						
+						<input id ="id_nombre" type="text" name="nombre" maxlength="20" placeholder="ingrese su nombre">
+						<span id="error_nombre" class="error"></span>
+					</span>
+					<span class="form_grupo">
+						<label class ="label" for ="id_apellido">apellido:</label>						
+						<input onblur="" id ="id_apellido" type="text" name="apellido" maxlength="20" placeholder="ingrese su apellido">
+						<span id="error_apellido" class="error"></span>
+					</span>
+					
+					<span class="contenedor_checkbox_radio">
+						<p class="titulo_de_contenedor">seleccionar sexo</p>
+						<input id ="id_masculino"type="radio" name="sexo" value = "m">
+						<label class ="label" for ="id_masculino">masculino</label>	<br>							
+						
+						<input id ="id_femenino"type="radio" name="sexo" value = "f">
+						<label class ="label" for ="id_femenino">femenino</label><br>
+						
+						<span id="error_sexo" class="error"></span>
+					</span>					
+					
+					<span class="form_grupo">
+						<label class ="label" for ="id_fecha_nacimiento">fecha nacimiento</label>						
+						<input class="fecha" id ="id_fecha_nacimiento" type="date" name="fecha_nacimiento" min="1900/12/28">
+						<span id="error_fecha_nacimiento" class="error"></span>
+					</span>
+					
+					<span class="form_grupo">
+						<label class ="label" for ="id_numero_cel">numero celular</label>						
+						<input id ="id_numero_cel" type="text" name="numero_cel" placeholder= "ingrese numero celular">
+						<span id="error_numero_cel" class="error"></span>
+					</span>
+					
+					<span class="form_grupo">
+						<label class ="label" for ="id_email">email: </label>					
+						<input id ="id_email"type="email" name="email" placeholder="ingrese su email">
+						<span id="error_email" class="error"></span>
+					</span>
+				
+				</fieldset>
+				<fieldset class = "fieldset" name="eventos">
+					<legend class = "legend">elegir eventos</legend>
+					
+					<span class="contenedor_checkbox_radio">
+						<p class="titulo_de_contenedor">seleccionar evento</p>
+						<input id ="id_torneo_tenis" class ="evento" type="radio" name="evento" value = "tenis">
+						<label class ="label" for ="id_torneo_tenis">tenis</label><br>
+						
+						<input id ="id_campeonato_ajedrez"type="radio" name="evento" value = "ajedrez">
+						<label class ="label" for ="id_campeonato_ajedrez">torneo ajedrez</label><br>
+						
+						<input id ="id_torneos_escolares"type="radio" name="evento" value = "torneo_escolar">
+						<label class ="label" for ="id_torneos_escolares">torneo escolar</label><br>
+						
+						<input id ="id_competencia_ciencia"type="radio" name="evento" value = "ciencia">
+						<label class ="label" for ="id_competencia_ciencia">competencia de ciencias</label><br>
+						
+						<span id="error_evento" class="error"></span>
+					</span>				
+					
+					<span class="form_grupo">
+						<label class ="label" for ="id_fecha_evento">fecha evento</label>						
+						<input class="fecha" id ="id_fecha_evento" type="date" name="fecha_evento" min="2025/11/1" max="2025/12/28">
+						<span id="error_fecha_evento" class="error"></span>
+					</span>
+					
+					<span class="form_grupo">
+						<label class ="label" for ="id_selector_lugar">seleccione lugar</label>
+						<select class="select" id="id_selector_lugar" name="lugar" size="1">
+							<option class="option" value="cancha" selected>cancha</option>
+							<option class="option" value="biblioteca">biblioteca</option>
+							<option class="option" value="cup">CUP</option>
+							<option class="option" value="aula_magna">aula magna</option>
+						</select>
+						<span id="error_lugar" class="error"></span>
+					</span>										
+				</fieldset>
+				
+				<fieldset class="fieldset" name="eventos registrados">
+					<p class="titulo_de_contenedor">eventos registrados:</p><br>					
+				</fieldset>
+				
+				
+				<fieldset class = "fieldset" name="acciones_botones">
+					<legend class = "legend" >acciones</legend>		
+					<button id="id_agregar_evento" class="boton" type ="button" onclick = "validar_datos_evento();">agregar evento</button>
+					<button id="id_quitar_evento" class="boton" type ="button" onclick = "">quitar evento</button>
+					<button id="id_envio" class="boton" type ="button" onclick = "validar_formulario();">enviar</button>
+					<button id="id_borrar" class="boton" type ="button" onclick = "borrar();">borrar</button>
+				</fieldset>
+				
+			</form>
+		
+		</article>
+	</section>
+	<footer>
+	<div id="descripcion_pagina">
+		<p>autor: <span class="autor">Santiago Servin</span></p>
+		<p>Acompañante Terapeutico <span class="tp_ejer"></span> <span class="tp_ejer"></span>.</p>		
+	</div>
+	</footer>
+	
+</body>
+
+</html>
